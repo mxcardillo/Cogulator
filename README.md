@@ -25,6 +25,16 @@ Cogulator is provided gratis under an Apache 2.0 license. Feel free to look unde
 # Beta
 This is beta software: don’t use Cogulator for critical work. Make sure your models folder (Documents/cogulator/models) is backed up regularly. 
 
+# Tauri Set up
+Tauri should be set up when running the standard "npm install" command.
+Should there be an issue, you can reinstall Tauri using the following commands:
+- "npm install -D @tauri-apps/cli"
+- "npm install @tauri-apps/api"
+
+Then, to get Tauri initialized and running, use the following commands:
+- for initializing (should be 1-time), use "npm run tauri init". This will take a couple of minutes to complete.
+- once Tauri has been initialized, use "npm run tauri dev" to launch a development version of the app
+
 # Alternatives
 If Cogulator doesn't work for your purposes (say, you wanted to plug into a sim), consider some of these alternatives
 * [GLEAN](http://web.eecs.umich.edu/~kieras/goms.html) ([repo](https://github.com/dekieras/GLEANApp)): One of the primary inspirations for Cogulator
