@@ -1,4 +1,4 @@
-const electron = require('electron');
+/*const electron = require('electron');
 const { app, BrowserWindow, remote } = require('electron');
 const path = require('path');
 require('update-electron-app')();
@@ -306,4 +306,43 @@ if (process.platform === 'darwin') {
 	]
 }
 
-const menu = Menu.buildFromTemplate(template)
+const menu = Menu.buildFromTemplate(template)*/
+
+// Test: can I interact with the document from here?
+document.getElementById('stat_task_time')
+.addEventListener('click', function () {
+	alert('Container clicked!')
+})
+
+var ganttButton = document.getElementById('gantt_button');
+var ganttArrow = document.getElementById('gantt_button_text');
+ganttArrow.classList.add('rotate_0');
+
+ganttButton.addEventListener("click", function() {
+	var ganttContainer = document.getElementById("gantt_container");
+
+	var flag = ganttArrow.classList.contains("rotate_0");
+	// alert('Flag: ' + flag)
+	if (flag) {
+		ganttContainer.style = "transform: translateY(-450px);";
+		ganttButton.style = "transform: translateY(-450px);";
+		ganttArrow.classList.remove("rotate_0");
+		ganttArrow.classList.add("rotate_180");
+	} else {
+		ganttContainer.style = "bottom: -450px;";
+		ganttButton.style = "bottom: 0px;";
+		ganttArrow.classList.remove("rotate_180");
+		ganttArrow.classList.add("rotate_0");
+	}
+});
+
+var refreshButton = document.getElementById('reload_model_button_container');
+
+refreshButton.addEventListener('click', function() {
+	// var refreshCircle = document.getElementById('reload_model_button');
+
+	refreshButton.classList.add('rotate_360');
+	setTimeout(function() {refreshButton.classList.remove('rotate_360')}, 300);
+	//refreshButton.classList = 'rotate_0';
+	//alert('Slide: ' + refreshButton.classList.contains('rotate_360'));
+});
